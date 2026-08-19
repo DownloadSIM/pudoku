@@ -1,0 +1,183 @@
+export type LanguageCode = "en" | "zh-TW" | "zh-CN" | "ko" | "ja-Hira" | "mn" | "iu";
+
+export const TRANSLATIONS: Record<
+  LanguageCode,
+  {
+    name: string;
+    title: string;
+    subtitleShared: string;
+    subtitleFresh: string;
+    start: string;
+    pause: string;
+    resume: string;
+    end: string;
+    easy: string;
+    medium: string;
+    hard: string;
+    newPuzzle: string;
+    share: string;
+    undo: string;
+    redo: string;
+    reset: string;
+    keyboardTip: string;
+    solvedIn: (time: string) => string;
+    solvedPercentIn: (pct: number, time: string) => string;
+    nicelyDone: string;
+  }
+> = {
+  iu: {
+    name: "ᐃᓄᒃᑎᑐᑦ (Inuktitut)",
+    title: "ᓱᑐᑯ ᑲᓚᖑᖃᑎᒋᑦ",
+    subtitleShared: "ᐱᖃᑎᒋᓪᓗᑎᑦ ᐊᔾᔨᐸᓗᐊᓂᒃ — ᐊᔾᔨᖓᓂᒃ ᐱᖃᑦᑕᖅᐳᑦ.",
+    subtitleFresh: "ᐊᓪᓚᕆᐊᖅᑐᕆ ᐅᕝᕙᓘᓐᓃᑦ ᑐᓂᓯᓗᑎᑦ.",
+    start: "ᐱᒋᐊᕈᓐᓇᖅᑐᖅ",
+    pause: "ᓄᖅᑲᖓᑎᑦᓯᑲᐃᓐᓇᕐᓗᓂ",
+    resume: "ᑲᔪᓯᓗᓂ",
+    end: "ᐱᔭᕇᖅᑐᖅ",
+    easy: "ᐊᔪᕐᓇᙱᓐᓂᖅᓴᖅ",
+    medium: "ᐊᑯᓐᓂᖓᓐᓂ",
+    hard: "ᐊᔪᕐᓇᖅᑐᖅ",
+    newPuzzle: "ᓄᑖᖅ ᓱᑐᑯ",
+    share: "ᓴᓂᓪᓕᕆᐊᕐᓗᒍ",
+    undo: "ᐅᑎᕐᑎᓪᓗᒍ",
+    redo: "ᐊᖏᕐᓗᒍ",
+    reset: "ᐊᓯᐅジᓗᒍ",
+    keyboardTip: "ᑭᐳᑲᑦ: 1-9 ᐃᓄᓕᖅᓯᒪᔪᖅ",
+    solvedIn: (time) => `${time}-ᒥ ᐱᔭᕇᖅᑐᖅ.`,
+    solvedPercentIn: (pct, time) => `${time}-ᒥ ${pct}% ᐃᓄᓕᖅᓯᒪᔪᖅ.`,
+    nicelyDone: "ᐊᒻᒪᕆᒃᑐᖅ.",
+  },
+  "ja-Hira": {
+    name: "ひらがな (にほんご)",
+    title: "すどく と一緒に",
+    subtitleShared: "きょうゆうされたぱずるです — おなじますをかいさいしています。",
+    subtitleFresh:
+      "いまあそぶか、りんくをきょうゆうしてみんなにおなじぱずるをといてもらいましょう。",
+    start: "はじめる",
+    pause: "いちじていし",
+    resume: "つづける",
+    end: "おわる",
+    easy: "かんたん",
+    medium: "ふつう",
+    hard: "むずかしい",
+    newPuzzle: "あたらしいぱずる",
+    share: "きょうゆう",
+    undo: "もどす",
+    redo: "やりなおす",
+    reset: "リセット",
+    keyboardTip: "きーぼーど：1-9でいれる、ばくすぺーすでけす、やじるしでいどう",
+    solvedIn: (time) => `${time} でとけたよ。`,
+    solvedPercentIn: (pct, time) => `${time} で ${pct}% せいかいしたよ。`,
+    nicelyDone: "よくできました。",
+  },
+  ko: {
+    name: "한국어 (한글)",
+    title: "푸도쿠 투게더",
+    subtitleShared: "공유된 퍼즐입니다 — 링크를 보낸 사람과 동일한 그리드입니다.",
+    subtitleFresh: "지금 플레이하거나 링크를 공유하여 다른 사람들과 같은 그리드를 풀어보세요.",
+    start: "시작",
+    pause: "일시정지",
+    resume: "계속",
+    end: "종료",
+    easy: "쉬움",
+    medium: "보통",
+    hard: "어려움",
+    newPuzzle: "새 퍼즐",
+    share: "공유",
+    undo: "실행 취소",
+    redo: "다시 실행",
+    reset: "초기화",
+    keyboardTip: "키보드: 1-9 채우기, 백스페이스 지우기, 방향키 이동, Ctrl/Cmd+Z 실행 취소",
+    solvedIn: (time) => `${time} 만에 끝냄.`,
+    solvedPercentIn: (pct, time) => `${pct}% 를 ${time} 만에 끝냄.`,
+    nicelyDone: "잘했어요.",
+  },
+  "zh-TW": {
+    name: "國語 (漢字)",
+    title: "數獨同樂",
+    subtitleShared: "您正在遊玩共享數獨 — 與發送連結者為相同棋盤。",
+    subtitleFresh: "立即遊玩，或分享連結讓其他人挑戰相同棋盤。",
+    start: "開始",
+    pause: "暫停",
+    resume: "繼續",
+    end: "結束",
+    easy: "簡單",
+    medium: "中等",
+    hard: "困難",
+    newPuzzle: "新題目",
+    share: "分享",
+    undo: "復原",
+    redo: "重做",
+    reset: "重置",
+    keyboardTip: "鍵盤：1-9 填入，退格鍵清除，方向鍵移動，Ctrl/Cmd+Z 復原",
+    solvedIn: (time) => `於 ${time} 內解開。`,
+    solvedPercentIn: (pct, time) => `於 ${time} 內完成 ${pct}%。`,
+    nicelyDone: "幹得好。",
+  },
+  "zh-CN": {
+    name: "中文 (简体)",
+    title: "数独同乐",
+    subtitleShared: "您正在游玩共享数独 — 与发送链接者为相同棋盘。",
+    subtitleFresh: "立即游玩，或分享链接让其他人挑战相同棋盘。",
+    start: "开始",
+    pause: "暂停",
+    resume: "继续",
+    end: "结束",
+    easy: "简单",
+    medium: "中等",
+    hard: "困难",
+    newPuzzle: "新题目",
+    share: "分享",
+    undo: "复原",
+    redo: "重做",
+    reset: "重置",
+    keyboardTip: "键盘：1-9 填入，退格键清除，方向键移动，Ctrl/Cmd+Z 复原",
+    solvedIn: (time) => `于 ${time} 内解开。`,
+    solvedPercentIn: (pct, time) => `于 ${time} 内完成 ${pct}%。`,
+    nicelyDone: "干得好。",
+  },
+  mn: {
+    name: "Монгол (Булгар)",
+    title: "Пудоку Хамтдаа",
+    subtitleShared: "Та хуваалцсан оньсого дээр байна — холбоос илгээсэн хүнтэй ижил хүснэгт.",
+    subtitleFresh: "Одоо тоглох эсвэл бусадтай ижил хүснэгтийг хуваалцах.",
+    start: "Эхлэх",
+    pause: "Түр зогсоох",
+    resume: "Үргэлжлүүлэх",
+    end: "Дуусгах",
+    easy: "хялбар",
+    medium: "дунд",
+    hard: "хэцүү",
+    newPuzzle: "Шинэ оньсого",
+    share: "Хуваалцах",
+    undo: "Буцаах",
+    redo: "Давтах",
+    reset: "Шинээр",
+    keyboardTip: "Гарууд: 1-9 бөглөх, Backspace арилгах, сумнууд шилжих",
+    solvedIn: (time) => `${time}-д амжилттай дуусгалаа.`,
+    solvedPercentIn: (pct, time) => `${time}-д ${pct}%-ийг зөв бөглөв.`,
+    nicelyDone: "Сайн байна.",
+  },
+  en: {
+    name: "English (Latin)",
+    title: "Pudoku Together",
+    subtitleShared: "You're on a shared puzzle — same grid as whoever sent the link.",
+    subtitleFresh: "Play now, or share the link so others solve the same grid.",
+    start: "Start",
+    pause: "Pause",
+    resume: "Resume",
+    end: "End",
+    easy: "easy",
+    medium: "medium",
+    hard: "hard",
+    newPuzzle: "New puzzle",
+    share: "Share",
+    undo: "Undo",
+    redo: "Redo",
+    reset: "Reset",
+    keyboardTip: "Keyboard: 1-9 to fill, Backspace to clear, arrows to move, Ctrl/Cmd+Z to undo",
+    solvedIn: (time) => `Solved in ${time}.`,
+    solvedPercentIn: (pct, time) => `Solved ${pct}% in ${time}.`,
+    nicelyDone: "Nicely done.",
+  },
+};
