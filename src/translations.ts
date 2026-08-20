@@ -1,4 +1,4 @@
-export type LanguageCode = "en" | "zh-TW" | "zh-CN" | "ko" | "ja-Hira" | "mn" | "iu";
+export type LanguageCode = "iu" | "ja-Hira" | "ko" | "zh-TW" | "zh-CN" | "mn" | "el" | "en";
 
 export const TRANSLATIONS: Record<
   LanguageCode,
@@ -26,7 +26,7 @@ export const TRANSLATIONS: Record<
   }
 > = {
   iu: {
-    name: "ᐃᓄᒃᑎᑐᑦ (Inuktitut)",
+    name: "ᐃᓄᒃᑎᑐᑦ (ᖃᓂᐅᔮᖅᐸᐃᑦ)",
     title: "ᓱᑐᑯ ᑲᓚᖑᖃᑎᒋᑦ",
     subtitleShared: "ᐱᖃᑎᒋᓪᓗᑎᑦ ᐊᔾᔨᐸᓗᐊᓂᒃ — ᐊᔾᔨᖓᓂᒃ ᐱᖃᑦᑕᖅᐳᑦ.",
     subtitleFresh: "ᐊᓪᓚᕆᐊᖅᑐᕆ ᐅᕝᕙᓘᓐᓃᑦ ᑐᓂᓯᓗᑎᑦ.",
@@ -137,7 +137,7 @@ export const TRANSLATIONS: Record<
     nicelyDone: "干得好。",
   },
   mn: {
-    name: "Монгол (Булгар)",
+    name: "Монгол хэл (Монгол бичиг)",
     title: "Пудоку Хамтдаа",
     subtitleShared: "Та хуваалцсан оньсого дээр байна — холбоос илгээсэн хүнтэй ижил хүснэгт.",
     subtitleFresh: "Одоо тоглох эсвэл бусадтай ижил хүснэгтийг хуваалцах.",
@@ -158,8 +158,30 @@ export const TRANSLATIONS: Record<
     solvedPercentIn: (pct, time) => `${time}-д ${pct}%-ийг зөв бөглөв.`,
     nicelyDone: "Сайн байна.",
   },
+  el: {
+    name: "Ελληνικά (Αλφάβητο)",
+    title: "Pudoku Μαζί",
+    subtitleShared: "Είστε σε ένα κοινό παζλ — το ίδιο πλέγμα με αυτόν που σας έστειλε τον σύνδεσμο.",
+    subtitleFresh: "Παίξτε τώρα ή μοιραστείτε τον σύνδεσμο ώστε οι άλλοι να λύσουν το ίδιο πλέγμα.",
+    start: "Έναρξη",
+    pause: "Παύση",
+    resume: "Συνέχεια",
+    end: "Τέλος",
+    easy: "εύκολο",
+    medium: "μεσαίο",
+    hard: "δύσκολο",
+    newPuzzle: "Νέο παζλ",
+    share: "Κοινοποίηση",
+    undo: "Αναίρεση",
+    redo: "Επανάληψη",
+    reset: "Επαναφορά",
+    keyboardTip: "Πληκτρολόγιο: 1-9 για συμπλήρωση, Backspace για διαγραφή, βέλη για μετακίνηση, Ctrl/Cmd+Z για αναίρεση",
+    solvedIn: (time) => `Λύθηκε σε ${time}.`,
+    solvedPercentIn: (pct, time) => `Λύθηκε κατά ${pct}% σε ${time}.`,
+    nicelyDone: "Μπράβο.",
+  },
   en: {
-    name: "English (Latin)",
+    name: "English (Latin Alphabet)",
     title: "Pudoku Together",
     subtitleShared: "You're on a shared puzzle — same grid as whoever sent the link.",
     subtitleFresh: "Play now, or share the link so others solve the same grid.",
